@@ -1,8 +1,7 @@
 //@ts-nocheck
 
 import * as React from "react";
-import { Component, Fragment } from "react";
-import { Tabs, Skeleton, Radio, Button } from "antd";
+import { Tabs, Skeleton, Button } from "antd";
 import RenderList from "./RenderList";
 
 const { TabPane } = Tabs;

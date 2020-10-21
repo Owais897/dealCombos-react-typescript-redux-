@@ -1,8 +1,6 @@
 //@ts-nocheck
 import React, { Fragment, useEffect } from "react";
-import logo from "./logo.svg";
 import { connect } from "react-redux";
-import RenderList from "./RenderList";
 
 import TabsList from "./TabsList";
 import { get_initial_data, save_seleted_item } from "./reducks/data";
@@ -14,7 +12,6 @@ function App(props) {
   }, []);
 
   return (
-    // <div className="App">
     <Fragment>
       <TabsList {...props} />
     </Fragment>

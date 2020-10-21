@@ -1,7 +1,7 @@
 //@ts-nocheck
 
 import React, { Component } from "react";
-import { Row, Radio } from "antd";
+import { Radio } from "antd";
 
 const radioStyle = {
   display: "block",
