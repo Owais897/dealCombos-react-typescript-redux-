@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//@ts-nocheck
+import React, { Fragment, useEffect } from "react";
+import logo from "./logo.svg";
+import { connect } from "react-redux";
+import RenderList from "./RenderList";
 
-function App() {
+import TabsList from "./TabsList";
+import { get_initial_data, save_seleted_item } from "./reducks/data";
+import "./App.css";
+
+function App(props) {
+  useEffect(() => {
+    props.get_initial_data();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <div className="App">
+    <Fragment>
+      <TabsList {...props} />
+    </Fragment>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  data: state.data,
+  loading: state.data.loading,
+});
+
+export default connect(mapStateToProps, {
+  get_initial_data,
+  save_seleted_item,
+})(App);
