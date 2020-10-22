@@ -10,10 +10,6 @@ const radioStyle = {
 };
 
 class RenderList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   sendToStore = (selectedItem) => {
     const { itemType } = this.props;
 
